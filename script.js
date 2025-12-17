@@ -54,9 +54,24 @@ observeElements.forEach(el => {
 // Mobile Menu
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
+// Select links specifically within the nav list
+const navItems = document.querySelectorAll('.nav-links a');
 
 menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active-menu');
-    // Simple logic for checking state could be added for better animation handling
+    toggleMenu();
 });
+
+// Close menu when a link is clicked
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        if (navLinks.classList.contains('active-menu')) {
+            toggleMenu();
+        }
+    });
+});
+
+function toggleMenu() {
+    navLinks.classList.toggle('active-menu');
+    // Optional: toggle icon state if desired
+}
 

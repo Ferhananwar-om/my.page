@@ -21,12 +21,22 @@
     /* Custom cursor */
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    /* Helps constrain absolute children */
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-body);
-    overflow-x: hidden;
+    /* overflow-x: hidden; moved to html, body block */
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Custom Cursor */
@@ -622,8 +632,28 @@ footer {
 
     /* Fix Grid Overflow on small screens */
     .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: flex;
+        /* Switch to flex column to be safer than grid sometimes */
+        flex-direction: column;
+        width: 100%;
+        gap: 3rem;
+    }
+
+    /* Ensure no element forces width */
+    .project-card,
+    .card-image,
+    .process-steps,
+    .step,
+    .skills-container,
+    .contact-form-container {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     .process-steps {
