@@ -78,8 +78,11 @@ h3 {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    mix-blend-mode: difference;
+    mix-blend-mode: normal;
+    /* Changed from difference to avoid menu visibility issues if inherited */
 }
+
+/* Mobile specific mix-blend handling if needed can be added in media query */
 
 .logo {
     font-size: 1.5rem;
@@ -423,7 +426,7 @@ section {
 /* Profile Picture */
 .profile-container {
     margin-bottom: 2rem;
-    animation: float 6s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
 
 .profile-pic {
@@ -598,19 +601,23 @@ footer {
 
     .hero-content {
         padding-top: 4rem;
+        width: 100%;
     }
 
     .glitch-text {
-        font-size: 15vw;
+        font-size: 12vw;
+        /* Reduced from 15vw */
     }
 
     .sub-hero {
-        font-size: 8vw;
+        font-size: 7vw;
+        /* Reduced from 8vw */
     }
 
     .profile-pic {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        /* Slightly larger to be focal point */
+        height: 120px;
     }
 
     /* Fix Grid Overflow on small screens */
