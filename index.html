@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasha | Creative Web Designer</title>
+    <meta name="description"
+        content="Bold, creative web designer portfolio specialized in modern, edgy, and interactive web experiences.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Playfair+Display:ital,wght@1,400;1,700&family=Space+Grotesk:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-mode">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="navbar">
+        <a href="#" class="logo">FERHAN<span class="dot">.</span></a>
+        <div class="nav-links">
+            <a href="#work">Work</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="menu-btn" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg">
+            <img src="assets/images/hero.png" alt="Abstract Background" class="hero-img">
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="assets/images/profile.jpg" alt="Sasha Profile" class="profile-pic">
+            </div>
+            <h1 class="glitch-text" data-text="Creative">Creative</h1>
+            <h1 class="sub-hero">Web Designer</h1>
+            <p class="hero-intro">I build <span class="highlight">digital experiences</span> that verify the status quo.
+                Bold, interactive, and unapologetically modern.</p>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Works, Skills, Process sections remain unchanged... -->
+
+    <section id="work" class="selected-works">
+        <h2 class="section-title">Selected Works</h2>
+        <div class="projects-grid">
+            <article class="project-card" data-tilt>
+                <div class="card-image">
+                    <img src="assets/images/p1.png" alt="Lumière Fashion" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3>Lumière Fashion</h3>
+                    <p>E-commerce / UI / UX</p>
+                </div>
+            </article>
+            <article class="project-card" data-tilt>
+                <div class="card-image">
+                    <img src="assets/images/p2.png" alt="Cyber Defense Hub" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3>Cyber Defense Hub</h3>
+                    <p>Dashboard / Data Viz</p>
+                </div>
+            </article>
+            <article class="project-card" data-tilt>
+                <div class="card-image">
+                    <img src="assets/images/p3.png" alt="Archi Portfolio" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h3>Archi Portfolio</h3>
+                    <p>Minimalist / Portfolio</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="skills-container">
+            <div class="skill-item">Creative Direction</div>
+            <div class="skill-item">UI/UX Design</div>
+            <div class="skill-item">Frontend Dev</div>
+            <div class="skill-item">Interaction</div>
+            <div class="skill-item">Branding</div>
+            <div class="skill-item">Motion</div>
+        </div>
+    </section>
+
+    <section id="process" class="process-section">
+        <h2 class="section-title">The Process</h2>
+        <div class="process-steps">
+            <div class="step">
+                <span class="step-number">01</span>
+                <h3>Idea</h3>
+                <p>Conceptualizing the vibe and structure.</p>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <span class="step-number">02</span>
+                <h3>Design</h3>
+                <p>Crafting high-fidelity visuals.</p>
+            </div>
+            <div class="step-line"></div>
+            <div class="step">
+                <span class="step-number">03</span>
+                <h3>Build</h3>
+                <p>Bringing it to life with code.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta-section">
+        <h2>Ready to make something <br><em>unforgettable?</em></h2>
+        <a href="#contact" class="btn-primary">Let's Talk</a>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="contact-form-container">
+                <h4>Say Hello.</h4>
+                <p class="contact-subtitle">Got a project? Drop me a line.</p>
+
+                <form class="contact-form">
+                    <div class="input-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message">Tell me about it</label>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-details">
+                <a href="mailto:hello@sasha.design" class="email-link">hello@sasha.design</a>
+                <div class="socials">
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+                <p class="copyright">© 2025 Sasha Design.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
