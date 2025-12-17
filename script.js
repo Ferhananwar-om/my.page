@@ -57,21 +57,32 @@ const navLinks = document.querySelector('.nav-links');
 // Select links specifically within the nav list
 const navItems = document.querySelectorAll('.nav-links a');
 
-menuBtn.addEventListener('click', () => {
-    toggleMenu();
-});
-
-// Close menu when a link is clicked
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        if (navLinks.classList.contains('active-menu')) {
-            toggleMenu();
-        }
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+        toggleMenu();
     });
-});
+
+    // Close menu when a link is clicked
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Close menu if it's open
+            if (navLinks.classList.contains('active-menu')) {
+                toggleMenu();
+            }
+            // Allow default navigation to happen
+        });
+    });
+}
 
 function toggleMenu() {
+    if (!navLinks) return;
+    
     navLinks.classList.toggle('active-menu');
-    // Optional: toggle icon state if desired
+    // Prevent body scroll when menu is open
+    if (navLinks.classList.contains('active-menu')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 }
 

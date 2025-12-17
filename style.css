@@ -604,6 +604,15 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
 
+    /* Navbar adjustments for mobile */
+    .navbar {
+        padding: 1.5rem 5%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
     /* Layout Adjustments */
     section {
         padding: 4rem 5%;
@@ -683,7 +692,7 @@ footer {
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(5, 5, 5, 0.95);
+        background: rgba(5, 5, 5, 0.98);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
@@ -691,13 +700,23 @@ footer {
         align-items: center;
         z-index: 99;
         transition: all 0.4s ease;
+        padding: 2rem;
+        box-sizing: border-box;
     }
 
     .nav-links.active-menu a {
-        font-size: 2.5rem;
-        margin-bottom: 2.5rem;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        margin-bottom: 2rem;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
         opacity: 0;
         animation: fadeUp 0.5s ease forwards;
+        /* Better touch target */
+        min-height: 44px;
     }
 
     .nav-links.active-menu a:nth-child(1) {
@@ -730,6 +749,9 @@ footer {
         background: transparent;
         border: none;
         padding: 10px;
+        min-width: 44px;
+        min-height: 44px;
+        cursor: pointer;
         /* Larger touch target */
     }
 
@@ -761,24 +783,58 @@ footer {
         text-align: left;
         width: 100%;
     }
+
+    /* Improve text readability on mobile */
+    .hero-intro {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        padding: 0 1rem;
+    }
+
+    /* Improve section titles on mobile */
+    .section-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        word-break: break-word;
+    }
+
+    /* Ensure images don't overflow */
+    .card-image img,
+    .hero-img,
+    .profile-pic {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 /* Extra Small Devices */
 @media (max-width: 380px) {
+    .navbar {
+        padding: 1rem 4%;
+    }
+
     .glitch-text {
-        font-size: 18vw;
+        font-size: 16vw;
     }
 
     .sub-hero {
-        font-size: 10vw;
+        font-size: 9vw;
     }
 
     .hero-intro {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    .nav-links.active-menu a {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section {
+        padding: 3rem 4%;
     }
 }
 
@@ -844,5 +900,6 @@ footer {
     font-family: var(--font-heading);
     background: var(--accent-gradient);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
